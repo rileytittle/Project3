@@ -19,6 +19,9 @@ public class WorkOrder
 	
 	public String getFileData()
 	{
+		String data = ticket.getFileData();
+		data += WorkOrderCreatedAt + ",";
+		data += employee.getFileData();
 		return "";
 	}
 }
