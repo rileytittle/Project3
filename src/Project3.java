@@ -15,9 +15,10 @@ public class Project3
 	public static String tier1TicketFileName;
 	public static String tier2TicketFileName;
 	public static String workOrderFileName;
+	
 	public static ArrayList<Employee> employeeList = new ArrayList<Employee>();
-	public static Queue<Ticket> tier1TicketFile = new LinkedList<Ticket>();
-	public static Queue<Ticket> tier2TicketFile = new LinkedList<Ticket>();
+	public static Queue<Ticket> tier1TicketFile;
+	public static Queue<Ticket> tier2TicketFile;
 	public static ArrayList<WorkOrder> workOrderList = new ArrayList<WorkOrder>();
 	
 	public static void main(String[] args) 
