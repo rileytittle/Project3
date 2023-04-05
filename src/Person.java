@@ -34,9 +34,6 @@ public class Person
 		String data = "";
 		data += firstName + ",";
 		data += lastName + ",";
-		data += address + ",";
-		data += phoneNumber + ",";
-		data += email + ",";
 		return data;
 	}
 }//end class
