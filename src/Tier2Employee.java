@@ -27,6 +27,8 @@ public class Tier2Employee extends Employee
 	 * Returns a string containing all the relevant data of a tier2employee object
 	 * @return a string containing all the relevant data of a tier2employee object
 	 */
+	
+	@Override
 	public String getFileData()
 	{
 		String data = super.getFileData();
