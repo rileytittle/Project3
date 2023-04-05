@@ -2,19 +2,19 @@
 public class Ticket 
 {
 	private Customer customer;
-	private String createdAt;
+	private String TicketCreatedAt;
 	private String ticketId;
 	
 	/**
 	 * Constructor for Ticket class
 	 * @param customer
-	 * @param createdAt
+	 * @param TicketCreatedAt
 	 * @param ticketId
 	 */
-	Ticket(Customer customer, String createdAt, String ticketId)
+	Ticket(Customer customer, String TicketCreatedAt, String ticketId)
 	{
 		this.customer = customer;
-		this.createdAt = createdAt;
+		this.TicketCreatedAt = TicketCreatedAt;
 		this.ticketId = ticketId;
 	}
 	
@@ -22,7 +22,7 @@ public class Ticket
 	{
 		String data = customer.getFileData();
 		data += ticketId + ",";
-		data += createdAt + ",";
+		data += TicketCreatedAt + ",";
 		return data;
 	}
 }//end class
