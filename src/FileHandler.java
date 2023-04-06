@@ -14,7 +14,8 @@ public class FileHandler
 	
 	public LinkedList<Ticket> readTicketData(String ticketFileName)
 	{
-		
+		LinkedList<Ticket> placeHolder = new LinkedList<>();
+		return placeHolder;
 	}
 	
 	private void logger(String log)
