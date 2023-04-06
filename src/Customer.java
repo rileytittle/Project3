@@ -1,5 +1,5 @@
 
-public class Customer extends Person
+public class Customer extends Person implements Printable
 {
 	private String customerId;
 	private String accountNumber;

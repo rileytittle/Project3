@@ -1,5 +1,5 @@
 
-public class Ticket 
+public class Ticket implements Printable
 {
 	private Customer customer;
 	private String TicketCreatedAt;

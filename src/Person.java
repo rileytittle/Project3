@@ -1,5 +1,5 @@
 
-public class Person 
+public class Person implements Printable
 {
 	private String firstName;
 	private String lastName;

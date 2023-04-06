@@ -1,4 +1,4 @@
-public class WorkOrder 
+public class WorkOrder implements Printable
 {
 	private Employee employee;
 	private Ticket ticket;

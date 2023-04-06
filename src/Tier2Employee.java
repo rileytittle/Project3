@@ -1,5 +1,5 @@
 
-public class Tier2Employee extends Employee
+public class Tier2Employee extends Employee implements Printable
 {
 	private String certification;
 	
