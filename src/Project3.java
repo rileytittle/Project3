@@ -34,6 +34,8 @@ public class Project3
 		tier1TicketFile = fileHandler.readTicketData(tier1TicketFileName);
 		tier2TicketFile = fileHandler.readTicketData(tier2TicketFileName);
 		
+		System.out.println("Creating Work Orders");
+		
 		
 		
 	}//end main method
