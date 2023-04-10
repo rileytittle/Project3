@@ -12,8 +12,8 @@ import java.util.Queue;
 public class Project3 
 {
 	public static String employeeFileName = "employee_data.csv";
-	public static String tier1TicketFileName;
-	public static String tier2TicketFileName;
+	public static String tier1TicketFileName = "tier1_ticket_data.csv";
+	public static String tier2TicketFileName = "tier2_ticket_data.csv";
 	public static String workOrderFileName;
 	
 	public static ArrayList<Employee> employeeList = new ArrayList<Employee>();
