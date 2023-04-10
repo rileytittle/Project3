@@ -147,8 +147,9 @@ public class FileHandler
 			Ticket ticket = new Ticket(customer, createdAt, ticketId);
 			ticketList.add(ticket);
 		}
+		fileScanner.close();
 		return ticketList;
-	}
+	}//end readTicketData method
 
 	private void logger(String log)
 	{
