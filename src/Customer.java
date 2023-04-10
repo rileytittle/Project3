@@ -35,8 +35,8 @@ public class Customer extends Person implements Printable
 			 String accountNumber)
 	{
 		super(firstName, lastName, address, phoneNumber, email);
-		this.customerId = customerId;
-		this.accountNumber = accountNumber;
+		setCustomerId(customerId);
+		setAccountNumber(accountNumber);
 	}//end Customer constructor
 	
 	@Override

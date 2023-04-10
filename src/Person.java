@@ -58,11 +58,11 @@ public class Person implements Printable
 	public Person(String firstName, String lastName, 
 			String address, String phoneNumber, String email) 
 	{
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.address = address;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
+		setFirstName(firstName);
+		setLastName(lastName);
+		setAddress(address);
+		setPhoneNumber(phoneNumber);
+		setEmail(email);
 	}//end Person constructor
 	
 	/**

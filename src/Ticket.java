@@ -37,9 +37,9 @@ public class Ticket implements Printable
 	 */
 	Ticket(Customer customer, String ticketCreatedAt, String ticketId)
 	{
-		this.customer = customer;
-		this.ticketCreatedAt = ticketCreatedAt;
-		this.ticketId = ticketId;
+		setCustomer(customer);
+		setTicketCreatedAt(ticketCreatedAt);
+		setTicketId(ticketId);
 	}
 	
 	public String getFileData()

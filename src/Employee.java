@@ -45,9 +45,9 @@ public class Employee extends Person implements Printable
 			        String clockedIn, String hiredDate)
 	{
 		super(firstName, lastName, address, phoneNumber, email);
-		this.employeeId = employeeId;
-		this.clockedIn = clockedIn;
-		this.hiredDate = hiredDate;
+		setEmployeeId(employeeId);
+		setClockedIn(clockedIn);
+		setHiredDate(hiredDate);
 	}//end Employee constructor
 	
 	@Override

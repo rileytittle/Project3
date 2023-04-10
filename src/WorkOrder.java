@@ -36,9 +36,9 @@ public class WorkOrder implements Printable
 	 */
 	public WorkOrder(Employee employee, Ticket ticket, String workOrderCreatedAt)
 	{
-		this.employee = employee;
-		this.ticket = ticket;
-		this.workOrderCreatedAt = workOrderCreatedAt;
+		setEmployee(employee);
+		setTicket(ticket);
+		setWorkOrderCreatedAt(workOrderCreatedAt);
 	}//end WorkOrder constructor
 	
 	public String getFileData()
