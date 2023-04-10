@@ -3,6 +3,14 @@ public class Tier2Employee extends Employee implements Printable
 {
 	private String certification;
 	
+	public String getCertification() {
+		return certification;
+	}
+
+	public void setCertification(String certification) {
+		this.certification = certification;
+	}
+
 	/**
 	 * Constructor for Tier2Employee class
 	 * @param firstName

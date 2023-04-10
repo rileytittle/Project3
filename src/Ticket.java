@@ -2,19 +2,43 @@
 public class Ticket implements Printable
 {
 	private Customer customer;
-	private String TicketCreatedAt;
+	private String ticketCreatedAt;
 	private String ticketId;
 	
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public String getTicketCreatedAt() {
+		return ticketCreatedAt;
+	}
+
+	public void setTicketCreatedAt(String ticketCreatedAt) {
+		this.ticketCreatedAt = ticketCreatedAt;
+	}
+
+	public String getTicketId() {
+		return ticketId;
+	}
+
+	public void setTicketId(String ticketId) {
+		this.ticketId = ticketId;
+	}
+
 	/**
 	 * Constructor for Ticket class
 	 * @param customer
-	 * @param TicketCreatedAt
+	 * @param ticketCreatedAt
 	 * @param ticketId
 	 */
-	Ticket(Customer customer, String TicketCreatedAt, String ticketId)
+	Ticket(Customer customer, String ticketCreatedAt, String ticketId)
 	{
 		this.customer = customer;
-		this.TicketCreatedAt = TicketCreatedAt;
+		this.ticketCreatedAt = ticketCreatedAt;
 		this.ticketId = ticketId;
 	}
 	
@@ -22,7 +46,7 @@ public class Ticket implements Printable
 	{
 		String data = customer.getFileData();
 		data += ticketId + ",";
-		data += TicketCreatedAt + ",";
+		data += ticketCreatedAt + ",";
 		return data;
 	}
 }//end class

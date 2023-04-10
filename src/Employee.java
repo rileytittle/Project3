@@ -5,6 +5,30 @@ public class Employee extends Person implements Printable
 	private String clockedIn;
 	private String hiredDate;
 	
+	public String getEmployeeId() {
+		return employeeId;
+	}
+
+	public void setEmployeeId(String employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	public String getClockedIn() {
+		return clockedIn;
+	}
+
+	public void setClockedIn(String clockedIn) {
+		this.clockedIn = clockedIn;
+	}
+
+	public String getHiredDate() {
+		return hiredDate;
+	}
+
+	public void setHiredDate(String hiredDate) {
+		this.hiredDate = hiredDate;
+	}
+
 	/**
 	 * Constructor for Employee class
 	 * @param firstName
