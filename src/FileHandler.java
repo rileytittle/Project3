@@ -94,6 +94,7 @@ public class FileHandler
 				Project3.employeeList.add(employee);
 			}//end else
 		}//end while loop
+		fileDataIn.close();
 	}//end readEmployeeData method
 
 	public LinkedList<Ticket> readTicketData(String ticketFileName)
