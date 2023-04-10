@@ -17,6 +17,7 @@ public class FileHandler
 
 	public void readEmployeeData(String employeeFileName)
 	{
+		logger("Loading Employee Data");
 		FileReader fileReader = null;
 		System.out.println("Loading Employee Data");
 		try 

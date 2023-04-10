@@ -25,6 +25,7 @@ public class Project3
 	{
 		FileHandler fileHandler = new FileHandler();
 		fileHandler.readEmployeeData(employeeFileName);
+		System.out.print(employeeList);
 	}//end main method
 	
 	public static void createWorkOrders()
