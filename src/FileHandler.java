@@ -99,8 +99,38 @@ public class FileHandler
 
 	public LinkedList<Ticket> readTicketData(String ticketFileName)
 	{
-		LinkedList<Ticket> placeHolder = new LinkedList<>();
-		return placeHolder;
+		logger("Loading Ticket Data");
+		LinkedList<Ticket> ticketList = new LinkedList<>();
+		FileReader fileReader = null;
+		
+		try 
+		{
+			fileReader = new FileReader(ticketFileName);
+		} 
+		catch (FileNotFoundException e) 
+		{
+			e.printStackTrace();
+		}
+		Scanner fileScanner = new Scanner(fileReader);
+		
+		fileScanner.nextLine(); //get rid of the headers
+		
+		while(fileScanner.hasNextLine())
+		{
+			String ticketInfo = fileScanner.nextLine();
+			String[] ticketInfoElements = ticketInfo.split(",");
+			
+			Customer customer = new Customer(ticketInfoElements[1],
+					ticketInfoElements[2],
+					ticketInfoElements[4],
+					ticketInfoElements[5],
+					ticketInfoElements[3],
+					ticketInfoElements[0],
+					ticketInfoElements[6]);
+			Ticket ticket = new Ticket(customer, ticketInfoElements[8], ticketInfoElements[7]);
+			ticketList.add(ticket);
+		}
+		return ticketList;
 	}
 
 	private void logger(String log)

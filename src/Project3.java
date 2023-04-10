@@ -29,6 +29,10 @@ public class Project3
 		
 		fileHandler.readEmployeeData(employeeFileName);
 		
+		System.out.println("Loading Ticket Data");
+		
+		fileHandler.readTicketData(tier1TicketFileName);
+		
 		
 	}//end main method
 	
