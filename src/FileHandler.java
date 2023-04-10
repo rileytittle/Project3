@@ -67,30 +67,38 @@ public class FileHandler
 			String employeeData = fileDataIn.nextLine();
 			//split the line of data on the comma to parse it easily
 			String[] employeeDataElements = employeeData.split(",");
+			/**
+			 * Constructor for Employee class
+			 * @param firstName
+			 * @param lastName
+			 * @param address
+			 * @param phoneNumber
+			 * @param email
+			 * @param employeeId
+			 * @param clockedIn
+			 * @param hiredDate
+			 */
+			String employeeId = employeeDataElements[0];
+			String firstName = employeeDataElements[1];
+			String lastName = employeeDataElements[2];
+			String email = employeeDataElements[3];
+			String address = employeeDataElements[4];
+			String phoneNumber = employeeDataElements[5];
+			String clockedIn = employeeDataElements[6];
+			String dateHired = employeeDataElements[7];
+			String tier = employeeDataElements[8];
+			String certification = employeeDataElements[9];
 			
-			if(employeeDataElements[8].equals("tier1"))
+			if(tier.equals("tier1"))
 			{
-				Employee employee = new Employee(employeeDataElements[1],
-						employeeDataElements[2],
-						employeeDataElements[4],
-						employeeDataElements[5],
-						employeeDataElements[3], 
-						employeeDataElements[0],
-						employeeDataElements[6],
-						employeeDataElements[7]);
+				Employee employee = new Employee(firstName, lastName, address, phoneNumber, email, employeeId,
+						clockedIn, dateHired);
 				Project3.employeeList.add(employee);
 			}
 			else
 			{
-				Tier2Employee employee = new Tier2Employee(employeeDataElements[1],
-						employeeDataElements[2],
-						employeeDataElements[4],
-						employeeDataElements[5],
-						employeeDataElements[3], 
-						employeeDataElements[0],
-						employeeDataElements[6],
-						employeeDataElements[7],
-						employeeDataElements[9]);
+				Tier2Employee employee = new Tier2Employee(firstName, lastName, address, phoneNumber,
+						email, employeeId, clockedIn, dateHired, certification);
 				Project3.employeeList.add(employee);
 			}//end else
 		}//end while loop
@@ -120,14 +128,23 @@ public class FileHandler
 			String ticketInfo = fileScanner.nextLine();
 			String[] ticketInfoElements = ticketInfo.split(",");
 			
-			Customer customer = new Customer(ticketInfoElements[1],
-					ticketInfoElements[2],
-					ticketInfoElements[4],
-					ticketInfoElements[5],
-					ticketInfoElements[3],
-					ticketInfoElements[0],
-					ticketInfoElements[6]);
-			Ticket ticket = new Ticket(customer, ticketInfoElements[8], ticketInfoElements[7]);
+			String customerId = ticketInfoElements[0];
+			String firstName = ticketInfoElements[1];
+			String lastName = ticketInfoElements[2];
+			String email = ticketInfoElements[3];
+			String address = ticketInfoElements[4];
+			String phoneNumber = ticketInfoElements[5];
+			String accountNumber = ticketInfoElements[6];
+			String ticketId = ticketInfoElements[7];
+			String createdAt = ticketInfoElements[8];
+			/**
+			 * Constructor for Ticket class
+			 * @param customer
+			 * @param ticketCreatedAt
+			 * @param ticketId
+			 */
+			Customer customer = new Customer(firstName, lastName, address, phoneNumber, email, customerId, accountNumber);
+			Ticket ticket = new Ticket(customer, createdAt, ticketId);
 			ticketList.add(ticket);
 		}
 		return ticketList;
