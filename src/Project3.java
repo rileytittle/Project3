@@ -24,8 +24,12 @@ public class Project3
 	public static void main(String[] args) 
 	{
 		FileHandler fileHandler = new FileHandler();
+		
+		System.out.println("Loading Employee Data");
+		
 		fileHandler.readEmployeeData(employeeFileName);
-		System.out.print(employeeList);
+		
+		
 	}//end main method
 	
 	public static void createWorkOrders()

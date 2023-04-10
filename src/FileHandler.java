@@ -32,14 +32,22 @@ public class FileHandler
 	{
 
 	}
-
+	/**
+	 * readEmployeeData reads in the employee data from a csv file
+	 * and creates tier1 or tier2 employees based on the data in the csv file. 
+	 * The employee objects are added to the employeeList ArrayList in the Project3 class. 
+	 * @param employeeFileName the name of file with the employee data
+	 */
 	public void readEmployeeData(String employeeFileName)
 	{
+		//update the log file
 		logger("Loading Employee Data");
+		//create a fileReader for the file
 		FileReader fileReader = null;
-		System.out.println("Loading Employee Data");
+		
 		try 
 		{
+			//try to open the fileReader to to the csv file
 			fileReader = new FileReader(employeeFileName);
 		} 
 		catch (FileNotFoundException e) 
@@ -47,14 +55,19 @@ public class FileHandler
 			System.out.println(e);
 			e.printStackTrace();
 		}
+		//Wrap the fileReader in a Scanner to get the employee data
 		Scanner fileDataIn = new Scanner(fileReader);
 
 		fileDataIn.nextLine(); //scan in the headers to ignore them
-
+		
+		//loop until there is no data left in file
 		while(fileDataIn.hasNextLine())
 		{
+			//get a line of data from the csv file
 			String employeeData = fileDataIn.nextLine();
+			//split the line of data on the comma to parse it easily
 			String[] employeeDataElements = employeeData.split(",");
+			
 			if(employeeDataElements[8].equals("tier1"))
 			{
 				Employee employee = new Employee(employeeDataElements[1],
@@ -79,10 +92,9 @@ public class FileHandler
 						employeeDataElements[7],
 						employeeDataElements[9]);
 				Project3.employeeList.add(employee);
-			}
-		}
-		logger("testing - please work");
-	}
+			}//end else
+		}//end while loop
+	}//end readEmployeeData method
 
 	public LinkedList<Ticket> readTicketData(String ticketFileName)
 	{
