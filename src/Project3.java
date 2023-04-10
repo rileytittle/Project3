@@ -31,7 +31,9 @@ public class Project3
 		
 		System.out.println("Loading Ticket Data");
 		
-		fileHandler.readTicketData(tier1TicketFileName);
+		tier1TicketFile = fileHandler.readTicketData(tier1TicketFileName);
+		tier2TicketFile = fileHandler.readTicketData(tier2TicketFileName);
+		
 		
 		
 	}//end main method
