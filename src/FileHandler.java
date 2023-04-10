@@ -10,6 +10,24 @@ import java.util.Scanner;
 
 public class FileHandler 
 {
+	private FileWriter loggerFile = null;
+	private PrintWriter logPrinter = null;
+	/**
+	 * Constructor for FileHandler class
+	 * Creates a FileHandler object and sets up the PrintWriter for the log
+	 */
+	public FileHandler() 
+	{
+		try 
+		{
+			loggerFile = new FileWriter("log.txt", true);
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		logPrinter = new PrintWriter(loggerFile, true);
+	}
 	public void writeData(String workOrderFileName)
 	{
 
@@ -37,7 +55,7 @@ public class FileHandler
 		{
 			String employeeData = fileDataIn.nextLine();
 			String[] employeeDataElements = employeeData.split(",");
-			if(employeeDataElements[9].equals(null))
+			if(employeeDataElements[8].equals("tier1"))
 			{
 				Employee employee = new Employee(employeeDataElements[1],
 						employeeDataElements[2],
@@ -63,6 +81,7 @@ public class FileHandler
 				Project3.employeeList.add(employee);
 			}
 		}
+		logger("testing - please work");
 	}
 
 	public LinkedList<Ticket> readTicketData(String ticketFileName)
@@ -73,18 +92,8 @@ public class FileHandler
 
 	private void logger(String log)
 	{
-		FileWriter loggerFile = null;
-		try 
-		{
-			loggerFile = new FileWriter("log.txt");
-		} 
-		catch (IOException e) 
-		{
-			e.printStackTrace();
-		}
-		PrintWriter logPrinter = new PrintWriter(loggerFile, true);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 		Date date = new Date();
-		logPrinter.println("log: " + date + " : " + log);
+		logPrinter.println("log: " + dateFormat.format(date) + " : " + log);
 	}
 }

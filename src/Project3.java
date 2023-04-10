@@ -11,7 +11,7 @@ import java.util.Queue;
  */
 public class Project3 
 {
-	public static String employeeFileName;
+	public static String employeeFileName = "employee_data.csv";
 	public static String tier1TicketFileName;
 	public static String tier2TicketFileName;
 	public static String workOrderFileName;
