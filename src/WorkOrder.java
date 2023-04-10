@@ -46,6 +46,6 @@ public class WorkOrder implements Printable
 		String data = ticket.getFileData();
 		data += workOrderCreatedAt + ",";
 		data += employee.getFileData();
-		return "";
+		return data;
 	}
 }

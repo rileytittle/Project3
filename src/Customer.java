@@ -42,7 +42,7 @@ public class Customer extends Person implements Printable
 	@Override
 	public String getFileData()
 	{
-		String data = customerId;
+		String data = customerId + ",";
 		data += super.getFileData();
 		return data;
 	}
