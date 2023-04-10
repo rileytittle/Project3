@@ -1,5 +1,10 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -67,6 +72,18 @@ public class FileHandler
 
 	private void logger(String log)
 	{
-
+		FileWriter loggerFile = null;
+		try 
+		{
+			loggerFile = new FileWriter("log.txt");
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		PrintWriter logPrinter = new PrintWriter(loggerFile, true);
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+		Date date = new Date();
+		logPrinter.println("log: " + date + " : " + log);
 	}
 }
