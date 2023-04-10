@@ -23,7 +23,8 @@ public class Project3
 	
 	public static void main(String[] args) 
 	{
-		
+		FileHandler fileHandler = new FileHandler();
+		fileHandler.readEmployeeData(employeeFileName);
 	}//end main method
 	
 	public static void createWorkOrders()
