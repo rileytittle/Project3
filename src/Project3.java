@@ -53,7 +53,7 @@ public class Project3
 		{
 			for (Employee employee : employeeList) 
 			{
-				if(employee instanceof Tier2Employee)
+				if((employee instanceof Tier2Employee) && (!tier1TicketFile.isEmpty()))
 				{
 					WorkOrder workOrder = new WorkOrder(employee, tier2TicketFile.remove(), dateFormat.format(date));
 					workOrderList.add(workOrder);
@@ -64,7 +64,7 @@ public class Project3
 		{
 			for (Employee employee : employeeList) 
 			{
-				if(!(employee instanceof Tier2Employee))
+				if(!(employee instanceof Tier2Employee) && (!tier1TicketFile.isEmpty()))
 				{
 					WorkOrder workOrder = new WorkOrder(employee, tier1TicketFile.remove(), dateFormat.format(date));
 					workOrderList.add(workOrder);
