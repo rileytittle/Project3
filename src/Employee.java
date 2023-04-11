@@ -55,7 +55,7 @@ public class Employee extends Person implements Printable
 	{
 		String data = employeeId + ",";
 		data += super.getFileData();
-		data += clockedIn + ",";
+		data += clockedIn;
 		return data;
 	}
 }//end class

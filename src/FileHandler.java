@@ -30,8 +30,29 @@ public class FileHandler
 	}
 	public void writeData(String workOrderFileName)
 	{
-
-	}
+		logger("Writing Work Order Data to File");
+		FileWriter fileWriter = null;
+		try 
+		{
+			fileWriter = new FileWriter(workOrderFileName);
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		PrintWriter dataOut = new PrintWriter(fileWriter);
+		dataOut.println("customer_id,customer_first_name,customer_last_name,"
+				+ "ticket_id,ticket_createdAt,workorder_createdAt,employee_id,"
+				+ "employee_first_name,employee_last_name,clocked_in,certification");
+		
+		for(int i = 0; i < Project3.workOrderList.size(); i++)
+		{
+			dataOut.println(Project3.workOrderList.get(i).getFileData());
+			logger(Project3.workOrderList.get(i).getFileData());
+		}
+		logger("Work Orders created. Program Exiting");
+		dataOut.close();
+	}//end writeData method
 	/**
 	 * readEmployeeData reads in the employee data from a csv file
 	 * and creates tier1 or tier2 employees based on the data in the csv file. 

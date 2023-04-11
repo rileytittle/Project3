@@ -40,7 +40,7 @@ public class Tier2Employee extends Employee implements Printable
 	public String getFileData()
 	{
 		String data = super.getFileData();
-		data += certification + ",";
+		data += "," + certification;
 		return data;
 	}
 }//end class
