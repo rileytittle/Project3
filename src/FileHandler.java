@@ -10,25 +10,7 @@ import java.util.Scanner;
 
 public class FileHandler 
 {
-	private FileWriter loggerFile = null;
-	private PrintWriter logPrinter = null;
-	/**
-	 * Constructor for FileHandler class
-	 * Creates a FileHandler object and sets up the PrintWriter for the log
-	 */
-	public FileHandler() 
-	{
-		try 
-		{
-			loggerFile = new FileWriter("log.txt", true);
-		} 
-		catch (IOException e) 
-		{
-			e.printStackTrace();
-		}
-		logPrinter = new PrintWriter(loggerFile, true);
-	}
-	public void writeData(String workOrderFileName)
+	public static void writeData(String workOrderFileName)
 	{
 		logger("Writing Work Order Data to File");
 		FileWriter fileWriter = null;
@@ -44,11 +26,12 @@ public class FileHandler
 		dataOut.println("customer_id,customer_first_name,customer_last_name,"
 				+ "ticket_id,ticket_createdAt,workorder_createdAt,employee_id,"
 				+ "employee_first_name,employee_last_name,clocked_in,certification");
-		
+		int counter = 0;
 		for(int i = 0; i < Project3.workOrderList.size(); i++)
 		{
 			dataOut.println(Project3.workOrderList.get(i).getFileData());
 			logger(Project3.workOrderList.get(i).getFileData());
+			counter++;
 		}
 		logger("Work Orders created. Program Exiting");
 		dataOut.close();
@@ -59,13 +42,13 @@ public class FileHandler
 	 * The employee objects are added to the employeeList ArrayList in the Project3 class. 
 	 * @param employeeFileName the name of file with the employee data
 	 */
-	public void readEmployeeData(String employeeFileName)
+	public static void readEmployeeData(String employeeFileName)
 	{
 		//update the log file
 		logger("Loading Employee Data");
 		//create a fileReader for the file
 		FileReader fileReader = null;
-		
+
 		try 
 		{
 			//try to open the fileReader to to the csv file
@@ -80,7 +63,7 @@ public class FileHandler
 		Scanner fileDataIn = new Scanner(fileReader);
 
 		fileDataIn.nextLine(); //scan in the headers to ignore them
-		
+
 		//loop until there is no data left in file
 		while(fileDataIn.hasNextLine())
 		{
@@ -109,7 +92,7 @@ public class FileHandler
 			String dateHired = employeeDataElements[7];
 			String tier = employeeDataElements[8];
 			String certification = employeeDataElements[9];
-			
+
 			if(tier.equals("tier1"))
 			{
 				Employee employee = new Employee(firstName, lastName, address, phoneNumber, email, employeeId,
@@ -126,12 +109,12 @@ public class FileHandler
 		fileDataIn.close();
 	}//end readEmployeeData method
 
-	public LinkedList<Ticket> readTicketData(String ticketFileName)
+	public static LinkedList<Ticket> readTicketData(String ticketFileName)
 	{
 		logger("Loading Ticket Data");
 		LinkedList<Ticket> ticketList = new LinkedList<>();
 		FileReader fileReader = null;
-		
+
 		try 
 		{
 			fileReader = new FileReader(ticketFileName);
@@ -141,14 +124,14 @@ public class FileHandler
 			e.printStackTrace();
 		}
 		Scanner fileScanner = new Scanner(fileReader);
-		
+
 		fileScanner.nextLine(); //get rid of the headers
-		
+
 		while(fileScanner.hasNextLine())
 		{
 			String ticketInfo = fileScanner.nextLine();
 			String[] ticketInfoElements = ticketInfo.split(",");
-			
+
 			String customerId = ticketInfoElements[0];
 			String firstName = ticketInfoElements[1];
 			String lastName = ticketInfoElements[2];
@@ -172,10 +155,18 @@ public class FileHandler
 		return ticketList;
 	}//end readTicketData method
 
-	private void logger(String log)
+	private static void logger(String log)
 	{
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
-		Date date = new Date();
-		logPrinter.println("log: " + dateFormat.format(date) + " : " + log);
+		try(FileWriter logFile = new FileWriter("log.txt", true))
+		{
+			PrintWriter logPrinter = new PrintWriter(logFile, true);
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+			Date date = new Date();
+			logPrinter.println("log: " + dateFormat.format(date) + " : " + log);
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 }
