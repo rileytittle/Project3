@@ -141,12 +141,6 @@ public class FileHandler
 			String accountNumber = ticketInfoElements[6];
 			String ticketId = ticketInfoElements[7];
 			String createdAt = ticketInfoElements[8];
-			/**
-			 * Constructor for Ticket class
-			 * @param customer
-			 * @param ticketCreatedAt
-			 * @param ticketId
-			 */
 			Customer customer = new Customer(firstName, lastName, address, phoneNumber, email, customerId, accountNumber);
 			Ticket ticket = new Ticket(customer, createdAt, ticketId);
 			ticketList.add(ticket);
