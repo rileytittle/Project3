@@ -1,4 +1,7 @@
-
+/**
+ * An Employee is a Person with an Employee ID, a clocked in time, and a hired date.
+ * It extends Person and implements Printable
+ */
 public class Employee extends Person implements Printable
 {
 	private String employeeId;

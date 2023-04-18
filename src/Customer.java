@@ -1,4 +1,7 @@
-
+/**
+ * A customer is a person with a customer ID and an account number.
+ * It extends Person and implements Printable.
+ */
 public class Customer extends Person implements Printable
 {
 	private String customerId;

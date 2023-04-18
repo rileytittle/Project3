@@ -1,4 +1,6 @@
-
+/**
+ * The Person class represents a person with their name, address, phone number, and email.
+ */
 public class Person implements Printable
 {
 	private String firstName;
