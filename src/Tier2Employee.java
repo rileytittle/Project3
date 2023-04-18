@@ -1,12 +1,21 @@
-
+/**
+ * The Tier2Employee Class is an Employee with a certification. 
+ * It extends Employee and implements Printable. 
+ */
 public class Tier2Employee extends Employee implements Printable
 {
 	private String certification;
-	
+	/**
+	 * getCertification gets the certification that the Tier2Employee has.
+	 * @return the certification that the Tier2Employee has.
+	 */
 	public String getCertification() {
 		return certification;
 	}
-
+	/**
+	 * setCertification sets the certification that the Tier2Employee has.
+	 * @param certification a certification that the Tier2Employee has.
+	 */
 	public void setCertification(String certification) {
 		this.certification = certification;
 	}
@@ -30,11 +39,6 @@ public class Tier2Employee extends Employee implements Printable
 		super(firstName, lastName, address, phoneNumber, email, employeeId, clockedIn, hiredDate);
 		this.certification = certification;
 	}//end Tier2Employee constructor
-	
-	/**
-	 * Returns a string containing all the relevant data of a tier2employee object
-	 * @return a string containing all the relevant data of a tier2employee object
-	 */
 	
 	@Override
 	public String getFileData()

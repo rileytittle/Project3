@@ -7,9 +7,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.Scanner;
-
+/**
+ * FileHandler class has static methods that are used 
+ * to read and write data from multiple csv files.
+ */
 public class FileHandler 
 {
+	/**
+	 * writeData writes the wordOrder objects from workOrderList
+	 * to the csv file with the workOrderFileName.
+	 * @param workOrderFileName the name of the file to write
+	 * the work orders to.
+	 */
 	public static void writeData(String workOrderFileName)
 	{
 		logger("Writing Work Order Data to File");
@@ -71,17 +80,6 @@ public class FileHandler
 			String employeeData = fileDataIn.nextLine();
 			//split the line of data on the comma to parse it easily
 			String[] employeeDataElements = employeeData.split(",");
-			/**
-			 * Constructor for Employee class
-			 * @param firstName
-			 * @param lastName
-			 * @param address
-			 * @param phoneNumber
-			 * @param email
-			 * @param employeeId
-			 * @param clockedIn
-			 * @param hiredDate
-			 */
 			String employeeId = employeeDataElements[0];
 			String firstName = employeeDataElements[1];
 			String lastName = employeeDataElements[2];
@@ -108,7 +106,13 @@ public class FileHandler
 		}//end while loop
 		fileDataIn.close();
 	}//end readEmployeeData method
-
+	/**
+	 * readTicketData reads in the data from the ticketFileName passed to it
+	 * and creates Ticket objects. The objects are added to a LinkedList,
+	 * which is returned. 
+	 * @param ticketFileName the name of the file that the method reads the data from.
+	 * @return a LinkedList with the created Ticket objects. 
+	 */
 	public static LinkedList<Ticket> readTicketData(String ticketFileName)
 	{
 		logger("Loading Ticket Data");
@@ -148,7 +152,13 @@ public class FileHandler
 		fileScanner.close();
 		return ticketList;
 	}//end readTicketData method
-
+	/**
+	 * logger is a private method that creates and writes to a
+	 * plain text file with details about what the program is doing
+	 * and it also lists all the work orders that get created. Every
+	 * action recorded in the log has the date and time. 
+	 * @param log the string of data to write to the log file. 
+	 */
 	private static void logger(String log)
 	{
 		try(FileWriter logFile = new FileWriter("log.txt", true))

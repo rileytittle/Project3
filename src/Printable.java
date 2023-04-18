@@ -5,5 +5,11 @@
  */
 public interface Printable 
 {
+	/**
+	 * the getFileData method will return a string containing
+	 * pertinent information about the object on which it is being
+	 * called in csv format. 
+	 * @return
+	 */
 	String getFileData();
 }//end interface
