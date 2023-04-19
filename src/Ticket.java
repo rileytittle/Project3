@@ -1,4 +1,4 @@
-/*
+/**
  * The Ticket class represents a work ticket with it's customer, the time it
  * was created at, and it's own unique ID.
  */
