@@ -62,6 +62,10 @@ public class Ticket implements Printable
 		setCreatedAt(ticketCreatedAt);
 		setTicketId(ticketId);
 	}
+	/**
+	 * getFileData returns a string with information about the Ticket.
+	 * @return a string with information about the Ticket.
+	 */
 	@Override
 	public String getFileData()
 	{

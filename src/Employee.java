@@ -70,7 +70,10 @@ public class Employee extends Person implements Printable
 		setClockedIn(clockedIn);
 		setHiredDate(hiredDate);
 	}//end Employee constructor
-	
+	/**
+	 * getFileData returns a string with information about the Employee.
+	 * @return a string with information about the Employee.
+	 */
 	@Override
 	public String getFileData()
 	{

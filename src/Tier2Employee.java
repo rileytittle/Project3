@@ -39,7 +39,10 @@ public class Tier2Employee extends Employee implements Printable
 		super(firstName, lastName, address, phoneNumber, email, employeeId, clockedIn, hiredDate);
 		this.certification = certification;
 	}//end Tier2Employee constructor
-	
+	/**
+	 * getFileData returns a string with information about the Tier2Employee.
+	 * @return a string with information about the Tier2Employee.
+	 */
 	@Override
 	public String getFileData()
 	{

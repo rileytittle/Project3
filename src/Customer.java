@@ -54,7 +54,10 @@ public class Customer extends Person implements Printable
 		setCustomerId(customerId);
 		setAccountNumber(accountNumber);
 	}//end Customer constructor
-	
+	/**
+	 * getFileData returns a string with information about the Customer.
+	 * @return a string with information about the customer.
+	 */
 	@Override
 	public String getFileData()
 	{

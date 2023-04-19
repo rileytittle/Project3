@@ -101,6 +101,7 @@ public class Person implements Printable
 	 * getFileData returns a string with information about the person
 	 * @return a string with information about the person
 	 */
+	@Override
 	public String getFileData()
 	{
 		String data = "";

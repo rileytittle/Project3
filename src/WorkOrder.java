@@ -64,7 +64,10 @@ public class WorkOrder implements Printable
 		setTicket(ticket);
 		setCreatedAt(createdAt);
 	}//end WorkOrder constructor
-	
+	/**
+	 * getFileData returns a string with information about the WorkOrder object.
+	 * @return a string with information about the WorkOrder object.
+	 */
 	@Override
 	public String getFileData()
 	{
