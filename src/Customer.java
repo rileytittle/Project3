@@ -38,13 +38,13 @@ public class Customer extends Person implements Printable
 
 	/**
 	 * Constructor for Customer class
-	 * @param firstName
-	 * @param lastName
-	 * @param address
-	 * @param phoneNumber
-	 * @param email
-	 * @param customerId
-	 * @param accountNumber
+	 * @param firstName the first name of the customer.
+	 * @param lastName the last name of the customer.
+	 * @param address the address of the customer.
+	 * @param phoneNumber the phone number of the customer.
+	 * @param email the email of the customer.
+	 * @param customerId the customer's ID.
+	 * @param accountNumber the customer's account number.
 	 */
 	Customer(String firstName, String lastName, String address,
 			 String phoneNumber, String email, String customerId,

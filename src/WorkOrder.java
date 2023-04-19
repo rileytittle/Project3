@@ -54,9 +54,9 @@ public class WorkOrder implements Printable
 
 	/**
 	 * Constructor for WorkOrder class
-	 * @param employee
-	 * @param ticket
-	 * @param createdAt
+	 * @param employee the employee associated with the WorkOrder.
+	 * @param ticket the ticket associated with the WorkOrder.
+	 * @param createdAt the date and time the ticket was created at.
 	 */
 	public WorkOrder(Employee employee, Ticket ticket, String createdAt)
 	{

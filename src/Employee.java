@@ -52,14 +52,14 @@ public class Employee extends Person implements Printable
 
 	/**
 	 * Constructor for Employee class
-	 * @param firstName
-	 * @param lastName
-	 * @param address
-	 * @param phoneNumber
-	 * @param email
-	 * @param employeeId
-	 * @param clockedIn
-	 * @param hiredDate
+	 * @param firstName the first name of the employee.
+	 * @param lastName the last name of the employee.
+	 * @param address the address of the employee.
+	 * @param phoneNumber the phone number of the employee.
+	 * @param email the email of the employee.
+	 * @param employeeId the employee's ID number.
+	 * @param clockedIn the time the employee clocked in.
+	 * @param hiredDate the date the employee was hired.
 	 */
 	public Employee(String firstName, String lastName, String address,
 			        String phoneNumber, String email, String employeeId,

@@ -52,9 +52,9 @@ public class Ticket implements Printable
 
 	/**
 	 * Constructor for Ticket class
-	 * @param customer
-	 * @param ticketCreatedAt
-	 * @param ticketId
+	 * @param customer the customer associated with the ticket.
+	 * @param ticketCreatedAt the date and time the ticket was created at.
+	 * @param ticketId the ID number of the ticket.
 	 */
 	Ticket(Customer customer, String ticketCreatedAt, String ticketId)
 	{
