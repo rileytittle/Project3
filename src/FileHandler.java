@@ -35,12 +35,10 @@ public class FileHandler
 		dataOut.println("customer_id,customer_first_name,customer_last_name,"
 				+ "ticket_id,ticket_createdAt,workorder_createdAt,employee_id,"
 				+ "employee_first_name,employee_last_name,clocked_in,certification");
-		int counter = 0;
 		for(int i = 0; i < Project3.workOrderList.size(); i++)
 		{
 			dataOut.println(Project3.workOrderList.get(i).getFileData());
 			logger(Project3.workOrderList.get(i).getFileData());
-			counter++;
 		}
 		logger("Work Orders created. Program Exiting");
 		dataOut.close();

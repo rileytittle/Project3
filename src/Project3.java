@@ -66,6 +66,8 @@ public class Project3
 
 	public static void main(String[] args) 
 	{
+		System.out.println("Project 3: Objects and Classes\n");
+		
 		System.out.println("Loading Employee Data");
 
 		FileHandler.readEmployeeData(employeeFileName);
